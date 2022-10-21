@@ -30,15 +30,14 @@ namespace FigureLib.Shapes
             throw new ArgumentException("The values of the sides does not correspond to reality!");
         }
 
-        private bool CheckSideCondition()
+        public bool CheckSideCondition()
         {
            return CheckSideLengtByZero() && !(A + B <= C || A + C <= B || B + C <= A);
         }
 
-        private bool CheckSideLengtByZero()
+        public bool CheckSideLengtByZero()
         {
             return A != 0 && B != 0 && C != 0;
-        }
-        
+        }    
     }
 }

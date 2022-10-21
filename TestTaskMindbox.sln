@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskMindbox", "TestTask
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureLib", "FigureLib\FigureLib.csproj", "{DA509E62-0030-431F-B2C5-E20D6C0BFDDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskMindbox.Test", "TestTaskMindbox.Test\TestTaskMindbox.Test.csproj", "{BC4D60A0-7C91-46D7-82AB-E391F6BC3ABF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DA509E62-0030-431F-B2C5-E20D6C0BFDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA509E62-0030-431F-B2C5-E20D6C0BFDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA509E62-0030-431F-B2C5-E20D6C0BFDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4D60A0-7C91-46D7-82AB-E391F6BC3ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4D60A0-7C91-46D7-82AB-E391F6BC3ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4D60A0-7C91-46D7-82AB-E391F6BC3ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4D60A0-7C91-46D7-82AB-E391F6BC3ABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
