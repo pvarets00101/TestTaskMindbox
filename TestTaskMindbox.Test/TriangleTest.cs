@@ -33,27 +33,36 @@ namespace TestTaskMindbox.Test
         [Fact]
         public void GetAreaWithTheWrongSides_ThrowExeption()
         {
-            var triange = new Triangle(3, 9, 5);
+            var triange = new Triangle(3, -4, 5);
 
             Assert.Throws<ArgumentException>(() => triange.GetArea());
         }
 
         [Fact]
-        public void CheckSideLengtByZero_ReturnTrue()
+        public void CheckSideLengtMoreThanZero_ReturnTrue()
         {
             var triange = new Triangle(3, 5, 5);
 
-            var isNotHaveZeroSideLengt = triange.CheckSideLengtByZero();
+            var isNotHaveZeroSideLengt = triange.CheckSideLengtMoreThanZero();
 
             Assert.True(isNotHaveZeroSideLengt);
         }
+        [Fact]
+        public void CheckSideLengtMoreThanZero_ReturnFalse()
+        {
+            var triange = new Triangle(-3, 5, 5);
+
+            var isNotHaveZeroSideLengt = triange.CheckSideLengtMoreThanZero();
+
+            Assert.False(isNotHaveZeroSideLengt);
+        }
 
         [Fact]
-        public void CheckSideLengtByZero_ReturnFalse()
+        public void CheckSideLengtNotEqualZero_ReturnFalse()
         {
             var triange = new Triangle(3, 5, 0);
 
-            var isNotHaveZeroSideLengt = triange.CheckSideLengtByZero();
+            var isNotHaveZeroSideLengt = triange.CheckSideLengtMoreThanZero();
 
             Assert.False(isNotHaveZeroSideLengt);
         }

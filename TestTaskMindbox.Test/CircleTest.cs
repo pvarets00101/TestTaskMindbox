@@ -20,5 +20,23 @@ namespace TestTaskMindbox.Test
 
             Assert.Equal(12.57, area);
         }
+        [Fact]
+        public void GetArea_WithRadiusValueByZero_ReturFalse()
+        {
+            var circle = new Circle(0);
+
+            var isNotHaveZeroRadiusValue= circle.CheckRadiusValue();
+
+            Assert.False(isNotHaveZeroRadiusValue);
+        }
+        [Fact]
+        public void GetArea_WithRadiusValueLessThanZero_ReturFalse()
+        {
+            var circle = new Circle(-3);
+
+            var isNotHaveZeroRadiusValue = circle.CheckRadiusValue();
+
+            Assert.False(isNotHaveZeroRadiusValue);
+        }
     }
 }

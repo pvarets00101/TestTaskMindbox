@@ -32,12 +32,12 @@ namespace FigureLib.Shapes
 
         public bool CheckSideCondition()
         {
-           return CheckSideLengtByZero() && !(A + B <= C || A + C <= B || B + C <= A);
+           return CheckSideLengtMoreThanZero() && !(A + B <= C || A + C <= B || B + C <= A);
         }
 
-        public bool CheckSideLengtByZero()
+        public bool CheckSideLengtMoreThanZero()
         {
-            return A != 0 && B != 0 && C != 0;
+            return A > 0 && B > 0 && C > 0;
         }    
     }
 }
