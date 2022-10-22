@@ -4,10 +4,12 @@ namespace TestTaskMindbox.Test
 {
     public class CircleTest
     {
-        [Fact]
-        public void GetArea_WithRadiusValueByZero_ReturExeption()
+        [Theory]
+        [InlineData(-3)]
+        [InlineData(0)]
+        public void GetArea_WithRadiusValueByZero_ReturExeption(double r)
         {
-            var circle = new Circle(0);
+            var circle = new Circle(r);
 
             Assert.Throws<ArgumentException>(() => circle.GetArea());
         }
@@ -19,24 +21,6 @@ namespace TestTaskMindbox.Test
             var area = circle.GetArea();
 
             Assert.Equal(12.57, area);
-        }
-        [Fact]
-        public void GetArea_WithRadiusValueByZero_ReturFalse()
-        {
-            var circle = new Circle(0);
-
-            var isNotHaveZeroRadiusValue= circle.CheckRadiusValue();
-
-            Assert.False(isNotHaveZeroRadiusValue);
-        }
-        [Fact]
-        public void GetArea_WithRadiusValueLessThanZero_ReturFalse()
-        {
-            var circle = new Circle(-3);
-
-            var isNotHaveZeroRadiusValue = circle.CheckRadiusValue();
-
-            Assert.False(isNotHaveZeroRadiusValue);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace TestTaskMindbox.Test
     public class TriangleTest
     {
         [Fact]
-        public void CheckSquarenessTriangle_ReturnTrue()
+        public void CheckSquarenessTriangleSideLenghtByCorrectValue_ReturnTrue()
         {
             var triange = new Triangle(3,4,5);
 
@@ -14,7 +14,7 @@ namespace TestTaskMindbox.Test
             Assert.True(isSquareness);
         }
         [Fact]
-        public void CheckSquarenessTriangle_False()
+        public void CheckSquarenessTriangleSideLenghtByCorrectValue_False()
         {
             var triange = new Triangle(3, 5, 5);
 
@@ -23,15 +23,19 @@ namespace TestTaskMindbox.Test
             Assert.False(isSquareness);
         }
 
-        [Fact]
-        public void CheckSquarenessTriangle_ThrowExeption()
+        [Theory]
+        [InlineData(3, 4, 8)]
+        [InlineData(3, -4, 5)]
+        [InlineData(3, 4, 0)]
+        public void CheckSquarenessTriangleSideLenghtByIncorrectValue_ThrowExeption(double a, double b, double c)
         {
-            var triange = new Triangle(3, 4, 8);
+            var triange = new Triangle(a,b,c);
 
             Assert.Throws<ArgumentException>(() => triange.CheckSquarenessTriangle());
         }
+
         [Fact]
-        public void GetArea_Value()
+        public void GetAreaWithSideLenghtByCorrectValue_Value()
         {
             var triange = new Triangle(3, 4, 5);
 
@@ -39,63 +43,16 @@ namespace TestTaskMindbox.Test
 
             Assert.Equal(6, area);
         }
-        [Fact]
-        public void GetAreaWithTheWrongSides_ThrowExeption()
+
+        [Theory]
+        [InlineData(3, 4, 8)]
+        [InlineData(3, -4, 5)]
+        [InlineData(0, 4, 5)]
+        public void GetAreaSideLenghtByIncorrectValue_ThrowExeption(double a, double b, double c)
         {
-            var triange = new Triangle(3, -4, 5);
+            var triange = new Triangle(a, b, c);
 
             Assert.Throws<ArgumentException>(() => triange.GetArea());
-        }
-
-        [Fact]
-        public void CheckSideLengtMoreThanZero_True()
-        {
-            var triange = new Triangle(3, 5, 5);
-
-            var isNotHaveZeroSideLengt = triange.CheckSideLengtMoreThanZero();
-
-            Assert.True(isNotHaveZeroSideLengt);
-        }
-        [Fact]
-        public void CheckSideLengtMoreThanZero_False()
-        {
-            var triange = new Triangle(-3, 5, 5);
-
-            var isNotHaveZeroSideLengt = triange.CheckSideLengtMoreThanZero();
-
-            Assert.False(isNotHaveZeroSideLengt);
-        }
-
-        [Fact]
-        public void CheckSideLengtNotEqualZero_False()
-        {
-            var triange = new Triangle(3, 5, 0);
-
-            var isNotHaveZeroSideLengt = triange.CheckSideLengtMoreThanZero();
-
-            Assert.False(isNotHaveZeroSideLengt);
-        }
-
-
-        [Fact]
-        public void CheckSideCondition_True()
-        {
-            var triange = new Triangle(3, 5, 5);
-
-            var isRatioSidesAcceptable = triange.CheckSideCondition();
-
-            Assert.True(isRatioSidesAcceptable);
-
-        }
-        [Fact]
-        public void CheckSideCondition_False()
-        {
-            var triange = new Triangle(3, 5, 9);
-
-            var isRatioSidesAcceptable = triange.CheckSideCondition();
-
-            Assert.False(isRatioSidesAcceptable);
-
         }
     }
 }

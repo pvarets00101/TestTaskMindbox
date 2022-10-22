@@ -1,7 +1,7 @@
 ﻿using FigureLib;
 using FigureLib.Shapes;
 
-var context = new ContextShapes(new Triangle(4, 7, 9));
+var context = new ContextShapes(new Triangle(0, 3, 3));
 context.GetResult();
 
 context.SetContextShape(new Circle(4));
