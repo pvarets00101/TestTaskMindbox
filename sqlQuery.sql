@@ -1,6 +1,6 @@
 CREATE TABLE Products (
 	Id INT PRIMARY KEY,
-	Name TEXT
+	Name NVARCHAR(20)
 );
 
 INSERT INTO Products
@@ -11,7 +11,7 @@ VALUES
 
 CREATE TABLE Categories (
 	Id INT PRIMARY KEY,
-	Name TEXT
+	Name NVARCHAR(20)
 );
 
 INSERT INTO Categories
@@ -30,7 +30,7 @@ INSERT INTO ProductCategories
 VALUES
 	(1, 2),
 	(1, 3),
-	(2, 1);
+	(2, 1),
 	(2, 3);
 
 SELECT P.Name, C.Name
