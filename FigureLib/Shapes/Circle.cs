@@ -13,7 +13,7 @@ namespace FigureLib.Shapes
         }
         public bool CheckRadiusValue()
         {
-            return R != 0 && R > 0;
+            return R > 0;
         }
     }
 }

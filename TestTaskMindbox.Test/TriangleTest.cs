@@ -13,6 +13,15 @@ namespace TestTaskMindbox.Test
 
             Assert.True(isSquareness);
         }
+        [Fact]
+        public void CheckSquarenessTriangle_False()
+        {
+            var triange = new Triangle(3, 5, 5);
+
+            bool isSquareness = triange.CheckSquarenessTriangle();
+
+            Assert.False(isSquareness);
+        }
 
         [Fact]
         public void CheckSquarenessTriangle_ThrowExeption()
@@ -22,7 +31,7 @@ namespace TestTaskMindbox.Test
             Assert.Throws<ArgumentException>(() => triange.CheckSquarenessTriangle());
         }
         [Fact]
-        public void GetArea_Test()
+        public void GetArea_Value()
         {
             var triange = new Triangle(3, 4, 5);
 
@@ -39,7 +48,7 @@ namespace TestTaskMindbox.Test
         }
 
         [Fact]
-        public void CheckSideLengtMoreThanZero_ReturnTrue()
+        public void CheckSideLengtMoreThanZero_True()
         {
             var triange = new Triangle(3, 5, 5);
 
@@ -48,7 +57,7 @@ namespace TestTaskMindbox.Test
             Assert.True(isNotHaveZeroSideLengt);
         }
         [Fact]
-        public void CheckSideLengtMoreThanZero_ReturnFalse()
+        public void CheckSideLengtMoreThanZero_False()
         {
             var triange = new Triangle(-3, 5, 5);
 
@@ -58,7 +67,7 @@ namespace TestTaskMindbox.Test
         }
 
         [Fact]
-        public void CheckSideLengtNotEqualZero_ReturnFalse()
+        public void CheckSideLengtNotEqualZero_False()
         {
             var triange = new Triangle(3, 5, 0);
 
@@ -69,7 +78,7 @@ namespace TestTaskMindbox.Test
 
 
         [Fact]
-        public void CheckSideCondition_ReturnTrue()
+        public void CheckSideCondition_True()
         {
             var triange = new Triangle(3, 5, 5);
 
@@ -79,7 +88,7 @@ namespace TestTaskMindbox.Test
 
         }
         [Fact]
-        public void CheckSideCondition_ReturnFalse()
+        public void CheckSideCondition_False()
         {
             var triange = new Triangle(3, 5, 9);
 
